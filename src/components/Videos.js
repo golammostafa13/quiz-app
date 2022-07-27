@@ -23,7 +23,7 @@ export default function Videos(){
                 loading && <div>Data Loading...</div>
             }
             {
-                error && <div>Something is wrong there!</div>
+                !loading && error && <div>Something is wrong there!</div>
             }
         </div>
     )
