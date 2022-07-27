@@ -20,10 +20,10 @@ export default function Videos(){
                 !loading && videos.length===0 && <div> Data not found! Check your connection</div>
             }
             {
-                loading && <div>Data Loading...</div>
+                error && <div>Something is wrong there!</div>
             }
             {
-                !loading && error && <div>Something is wrong there!</div>
+                loading && <div>Data Loading...</div>
             }
         </div>
     )
