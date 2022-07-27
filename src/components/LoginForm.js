@@ -16,24 +16,23 @@ export default function LoginForm(){
     async function handlSubmit(e){
         
         e.preventDefault();
-
         try{
             setError("");
             setLoading(true);
             await login(email, password);
-            navigate("/quiz-app");
+            navigate("/quize-app");
         }catch(err){
             console.log(err);
-            setError(err);
             setLoading(false);
-            setError("Failed to login!");
+
+            setError("Failed to login! Something wrong with email or password");
         }
     }
 
     return(
         <Form style={{height: "330px"}} onSubmit={handlSubmit} >
-            <TextInput icon="alternate_email" type="text" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <TextInput icon="lock" type="password" placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <TextInput icon="alternate_email" type="text" required placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <TextInput icon="lock" type="password" required placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)} />
             <Button disabled={loading} type="submit" ><span>Submit Now</span></Button>
             {error && <p className="error">{error}</p>}
             <div class="info">Don't have an account? <Link to="/signup">Signup</Link> instead.</div>

@@ -15,5 +15,5 @@ export default function Login(){
                 <LoginForm />
             </div>
         </>
-    ) : (<Navigate to="/quiz-app" />)
+    ) : (<Navigate to="/quize-app" />)
 }

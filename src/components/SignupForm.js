@@ -24,17 +24,19 @@ export default function SignupForm(){
         if(password !== confirmPassword){
             setError("Passwords don't match!")
         }
-
+        else if (password.length < 6){
+            setError("Make a strong and long password");
+        }
         try{
             setError("");
             setLoading(true);
             await signup(email, password, name);
-            navigate("/quiz-app");
+            navigate("/quize-app");
         }catch(err){
             console.log(err);
             setError(err);
             setLoading(false);
-            setError("Failed to create Account!");
+            setError("Failed to create account!");
         }
     }
 
@@ -52,7 +54,6 @@ export default function SignupForm(){
 
             <Button disabled={loading} type="submit"><span>Submit Now</span></Button>
             {error && <p className="error">{error}</p>}
-
             <div className="info">
                 Already have an account? <Link to="/login">Login</Link> instead.
             </div>

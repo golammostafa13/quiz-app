@@ -9,7 +9,7 @@ export default function Nav(){
         <nav className={classes.nav}>
             <ul>
                 <li>
-                <Link to="/quiz-app" className={classes.brand}>
+                <Link to="/quize-app" className={classes.brand}>
                     <img src={logo} alt="my logo" />
                     <h3>React Quiz App</h3>
                 </Link>
