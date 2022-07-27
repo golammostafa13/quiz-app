@@ -21,7 +21,7 @@ export default function LoginForm(){
             setError("");
             setLoading(true);
             await login(email, password);
-            navigate("/");
+            navigate("/quiz-app");
         }catch(err){
             console.log(err);
             setError(err);

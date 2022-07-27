@@ -15,5 +15,5 @@ export default function Signup(){
                 <SignupForm />
             </div>
         </>
-    ) : (<Navigate to="/" />)
+    ) : (<Navigate to="/quiz-app" />)
 }

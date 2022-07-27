@@ -29,7 +29,7 @@ export default function SignupForm(){
             setError("");
             setLoading(true);
             await signup(email, password, name);
-            navigate("/");
+            navigate("/quiz-app");
         }catch(err){
             console.log(err);
             setError(err);
