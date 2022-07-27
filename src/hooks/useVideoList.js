@@ -8,7 +8,7 @@ export default function useVideoList(){
 
     useEffect(() =>{
         async function fetchVideos(){
-            const db = await getDatabase();
+            const db = getDatabase();
             const videosRef = ref(db, "videos");
             const videoQuery = query(videosRef, orderByKey());
             try {
