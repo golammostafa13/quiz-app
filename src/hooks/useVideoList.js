@@ -17,7 +17,7 @@ export default function useVideoList(){
                 const snapshot = await get(videoQuery);
                 setLoading(false);
                 if(snapshot.exists()){
-                    setVideos((prev)=>[...prev, Object.values(snapshot.val())]);
+                    setVideos((prev)=>[...prev, ...Object.values(snapshot.val())]);
                 }            
             } catch (error) {
                 console.log(error);

@@ -10,11 +10,13 @@ export default function Videos(){
     return(
         <div className={classes.videos}>
             { videos.length > 0 && 
-                videos.map(video => (
-                    <Link to="/quiz" key={video.youtubeID}>
-                        <Video title={video.title} key={video.youtubeID} noq={video.noq} />
-                    </Link>
-                ))
+                videos.map(video => 
+                    video.noq ? 
+                    (<Link to="/quiz" key={video.youtubeID}>
+                        <Video title={video.title} id={video.youtubeID} noq={video.noq} />
+                    </Link>) : 
+                    (<Video title={video.title} id={video.youtubeID} noq={video.noq} />)
+                )
             }
             {
                 !loading && videos.length===0 && <div> Data not found! Check your connection</div>
